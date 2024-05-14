@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <style>
-    body{
+    body {
       background-color: antiquewhite;
     }
     img {
@@ -20,8 +20,10 @@
       margin-top: 40px;
       background-color: rgb(208, 226, 226);
       /* border: 2px solid red ; */
+        
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
     }
     #main_contanier div {
       margin: 10px;
@@ -30,15 +32,22 @@
       font-size: 20px;
       border: 2px solid rgb(16, 15, 15);
       border-radius: 20px 15px 20px 05px;
+        
     }
-    div:nth-child(odd){
-        background-color: rgb(221, 224, 235);
+    div:nth-child(odd) {
+      background-color: rgb(221, 224, 235);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
-    p{
-     margin-top: -20px;
+    div:nth-child(even){
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     }
-    h1{
-        margin-top: -10px;
+    p {
+      margin-top: -20px;
+    }
+    h1 {
+      margin-top: -10px;
     }
     button {
       font-size: 20px;
@@ -46,39 +55,53 @@
       color: white;
       margin-bottom: 10px;
       border-radius: 10px;
+      transition: ease-in-out 2s;
     }
     button:hover {
       cursor: pointer;
       font-size: 20px;
-      background-color: rgb(5, 199, 5);
+      background-color: rgb(196, 228, 196);
+      scale: 1.2;
+      color: rgba(11, 10, 1, 0.895);
     }
 
     nav {
-  background-color: #333;
-  overflow: hidden;
-}
+      background-color: #333;
+      overflow: hidden;
+    }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
 
-nav li {
-  float:left;
-}
+    nav li {
+      float: left;
+    }
 
-nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    nav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-nav li a:hover {
-  background-color: #111;
-}
+    nav li a:hover {
+      background-color: #111;
+    }
+
+    .button_last{
+      width: 200px;
+      height: 30px;
+    margin-left: 170%;
+       
+    }
+    .button_last:hover{
+      width: 220px;
+      background-color: rgba(241, 195, 202, 0.831);
+    }
 
     @media screen and (min-width: 200px) and (max-width: 757px) {
       img {
@@ -86,17 +109,17 @@ nav li a:hover {
         width: 100%;
         border-radius: 10px 25px 20px 05px;
       }
-      div:nth-child(even){
+      div:nth-child(even) {
         background-color: rgb(221, 224, 235);
-    }
-    div:nth-child(odd){
+      }
+      div:nth-child(odd) {
         background-color: rgb(231, 214, 201);
-    }
+      }
       #main_contanier {
         width: auto;
         margin: auto;
         background-color: rgb(238, 212, 121);
-        border: 3px solid red;
+         
 
         display: block;
       }
@@ -110,12 +133,10 @@ nav li a:hover {
       #main_contanier div {
         background-color: rgb(232, 232, 245);
       }
-    
     }
   </style>
-  <body><div>
-    
-  </div>
+  <body>
+    <div></div>
     <nav>
       <ul id="navbar">
         <li><a href="#home">Home</a></li>
@@ -124,12 +145,7 @@ nav li a:hover {
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div id="main_contanier">
-
-    </div>
-    
-
-
+    <div id="main_contanier"></div>
   </body>
   <script>
     let main_contanier = document.getElementById("main_contanier");
@@ -142,7 +158,8 @@ nav li a:hover {
     let title1 = document.createElement("h1");
     title1.innerText = "Natural Photo ";
     let details1 = document.createElement("p");
-    details1.innerText = "Natural describes something that comes from nature, rather than being man-made. Your healthy friend who only eats natural food will probably choose carrots instead of potato chips for a snack.";
+    details1.innerText =
+      "Natural describes something that comes from nature, rather than being man-made. Your healthy friend who only eats natural food will probably choose carrots instead of potato chips for a snack.";
     let btn1 = document.createElement("button");
     btn1.innerText = "Read more";
     card_1.append(img1, title1, details1, btn1);
@@ -172,7 +189,8 @@ nav li a:hover {
     let title3 = document.createElement("h1");
     title3.innerText = "Tree Lover ";
     let details3 = document.createElement("p");
-    details3.innerText = "Natural describes something that comes from nature, rather than being man-made. Your healthy friend who only eats natural food will probably choose carrots instead of potato chips for a snack.";
+    details3.innerText =
+      "Natural describes something that comes from nature, rather than being man-made. Your healthy friend who only eats natural food will probably choose carrots instead of potato chips for a snack.";
     let btn3 = document.createElement("button");
     btn3.innerText = "Read more";
     card_3.append(img3, title3, details3, btn3);
@@ -186,16 +204,17 @@ nav li a:hover {
     let title4 = document.createElement("h1");
     title4.innerText = "Lover Tree ";
     let details4 = document.createElement("p");
-    details4.innerText = "Natural describes something that comes from nature, rather than being man-made. Your healthy friend who only eats natural food will probably choose carrots instead of potato chips for a snack.";
+    details4.innerText =
+      "Natural describes something that comes from nature, rather than being man-made. Your healthy friend who only eats natural food will probably choose carrots instead of potato chips for a snack.";
     let btn4 = document.createElement("button");
     btn4.innerText = "Read more";
     card_4.append(img4, title4, details4, btn4);
     main_contanier.append(card_4);
 
+    let btn2last=document.createElement("button")
+    btn2last.innerText="Submit"
+    main_contanier.append(btn2last)
+    btn2last.classList.add("button_last")
     console.log(main_contanier);
-
-
-
-
   </script>
 </html>
