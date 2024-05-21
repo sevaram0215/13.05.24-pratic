@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="footer-container"></div>
+</body>
+<script>
+    const footerContainer = document.getElementById("footer-container");
+
+const footer = document.createElement("footer");
+footer.classList.add("flipkart-footer");
+footerContainer.appendChild(footer);
+
+const footerContent = document.createElement("div");
+footerContent.classList.add("footer-content");
+footer.appendChild(footerContent);
+
+const footerColumns = [
+  {
+    title: "Company",
+    links: [
+      { text: "About Us", href: "#" },
+      { text: "Careers", href: "#" },
+      { text: "Flipkart Stories", href: "#" },
+      { text: "Press", href: "#" },
+      { text: "Sell on Flipkart", href: "#" },
+    ],
+  },
+  {
+    title: "Help",
+    links: [
+      { text: "Help Center", href: "#" },
+      { text: "Returns & Replacements", href: "#" },
+      { text: "Track Order", href: "#" },
+      { text: "Contact Us", href: "#" },
+    ],
+  },
+  {
+    title: "Policy",
+    links: [
+      { text: "Privacy Policy", href: "#" },
+      { text: "Terms of Use", href: "#" },
+      { text: "Return Policy", href: "#" },
+      { text: "Sitemap", href: "#" },
+    ],
+  },
+  {
+    title: "Social",
+    links: [
+      { text: "Facebook", href: "#" },
+      { text: "Twitter", href: "#" },
+      { text: "Instagram", href: "#" },
+      { text: "YouTube", href: "#" },
+    ],
+  },
+];
+
+footerColumns.forEach((column) => {
+  const footerColumn = document.createElement("div");
+  footerColumn.classList.add("footer-column");
+  footerContent.appendChild(footerColumn);
+
+  const footerTitle = document.createElement("h3");
+  footerTitle.textContent = column.title;
+  footerColumn.appendChild(footerTitle);
+
+  const footerList = document.createElement("ul");
+  footerColumn.appendChild(footerList);
+
+  column.links.forEach((link) => {
+    const footerListItem = document.createElement("li");
+    footerList.appendChild(footerListItem);
+
+    const footerLink = document.createElement("a");
+    footerLink.textContent = link.text;
+    footerLink.href = link.href;
+    footerListItem.appendChild(footerLink);
+  });
+});
+
+const footerCopyright = document.createElement("div");
+footerCopyright.classList.add("footer-copyright");
+footer.appendChild(footerCopyright);
+
+const footerParagraph = document.createElement("p");
+footerParagraph.textContent = "Copyright © 2023 Flipkart. All rights reserved.";
+footerCopyright.appendChild(footerParagraph);
+</script>
+</html>

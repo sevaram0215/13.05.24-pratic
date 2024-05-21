@@ -103,6 +103,26 @@
       background-color: rgba(241, 195, 202, 0.831);
     }
 
+
+    #footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #07c9ded9;
+  
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+#footer.footer-animate {
+  transform: translateY(0);
+}
+
+#footer.footer-animate footer-content {
+  opacity: 1;
+}
     @media screen and (min-width: 200px) and (max-width: 757px) {
       img {
         height: 200px;
@@ -146,6 +166,13 @@
       </ul>
     </nav>
     <div id="main_contanier"></div>
+
+    <footer id="footer">
+  <div class="footer-content">
+    <h1>Copyright &copy; 2023 My Website. All rights reserved.</h1>
+  </div>
+</footer>
+
   </body>
   <script>
     let main_contanier = document.getElementById("main_contanier");
@@ -216,5 +243,17 @@
     main_contanier.append(btn2last)
     btn2last.classList.add("button_last")
     console.log(main_contanier);
+
+
+
+    const footer = document.getElementById("footer");
+
+footer.addEventListener("scroll", () => {
+  if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+    footer.classList.add("footer-animate");
+  } else {
+    footer.classList.remove("footer-animate");
+  }
+});
   </script>
 </html>
